@@ -447,11 +447,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\final-project-Sshariaz-main\\BasicDotnetApp\\BasicDotnetApp.csproj",
+      "projectUniqueName": "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\BankApp\\bank-atm-backend\\BasicDotnetApp.csproj",
       "projectName": "BasicDotnetApp",
-      "projectPath": "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\final-project-Sshariaz-main\\BasicDotnetApp\\BasicDotnetApp.csproj",
+      "projectPath": "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\BankApp\\bank-atm-backend\\BasicDotnetApp.csproj",
       "packagesPath": "C:\\Users\\zarra\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\final-project-Sshariaz-main\\BasicDotnetApp\\obj\\",
+      "outputPath": "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\BankApp\\bank-atm-backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\zarra\\AppData\\Roaming\\NuGet\\NuGet.Config"
