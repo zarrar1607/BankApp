@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "RIHdllNQiIQ9z5r5OfxiCKpmSl6OANQ+tVdd6aRj7u0=",
-  "Source": "BasicDotnetApp",
-  "BasePath": "_content/BasicDotnetApp",
+  "Hash": "BQWeFCwNSkdH/ZVhsKgXr+tOxBTQszej++6B6EVbnNM=",
+  "Source": "bank-atm-backend",
+  "BasePath": "_content/bank-atm-backend",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

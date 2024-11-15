@@ -35,3 +35,24 @@ Choose a project that fulfills the following requirements:
 	• Crime alert by location/user
 	• Book Review site
 	• Resale of used items (aka Craigslist )
+
+# Architecture
+ +----------------------------------------+                     +-------------------+
+ |                                        |  HTTP Request       |                   |
+ |       Frontend (View) - React          |<------------------->|  Controller (.NET)|
+ |  - Handles user interface              |                     |  - Handles requests|
+ |  - Sends HTTP requests to backend      |  HTTP Response      |  - Calls Model to  |
+ |  - Receives data via REST API          |<------------------->|    process data    |
+ |                                        |                     +---------+---------+
+ +-------------------+--------------------+                               |
+                     |                                                Data Interaction
+                     v                                                   with MongoDB
+ +---------------------------------+                       +------------+-------------+
+ |                                 |                       |                          |
+ |            Model                |                       |        MongoDB           |
+ |     - Represents data and       |   Read/Write          |     - NoSQL Database     |
+ |       business logic            |<--------------------->|     - Stores user data   |
+ |     - Communicates with DB      |                       |       (credentials, etc.)|
+ |                                 |                       |                          |
+ +---------------------------------+                       +--------------------------+
+

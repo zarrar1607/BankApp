@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\BankApp\\bank-atm-backend\\BasicDotnetApp.csproj": {}
+    "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\BankApp\\bank-atm-backend\\bank-atm-backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\BankApp\\bank-atm-backend\\BasicDotnetApp.csproj": {
+    "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\BankApp\\bank-atm-backend\\bank-atm-backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\BankApp\\bank-atm-backend\\BasicDotnetApp.csproj",
-        "projectName": "BasicDotnetApp",
-        "projectPath": "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\BankApp\\bank-atm-backend\\BasicDotnetApp.csproj",
+        "projectUniqueName": "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\BankApp\\bank-atm-backend\\bank-atm-backend.csproj",
+        "projectName": "bank-atm-backend",
+        "projectPath": "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\BankApp\\bank-atm-backend\\bank-atm-backend.csproj",
         "packagesPath": "C:\\Users\\zarra\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\zarra\\Downloads\\final-project-Sshariaz-main\\BankApp\\bank-atm-backend\\obj\\",
         "projectStyle": "PackageReference",

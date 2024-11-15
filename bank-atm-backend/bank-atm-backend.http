@@ -1,0 +1,6 @@
+@BankAtmBackend_HostAddress = http://localhost:5011
+
+GET {{BankAtmBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

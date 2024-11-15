@@ -1,6 +1,17 @@
+using MongoDB.Driver; // For MongoClient, IMongoClient
+using Microsoft.Extensions.Options; // For accessing MongoDbSettings through options
+using BankAtmBackend.Models; // For MongoDbSettings and UserRepository
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.Configure<MongoDbSettings>(
+    builder.Configuration.GetSection("MongoDbSettings"));
+builder.Services.AddSingleton<IMongoClient>(s =>
+    new MongoClient(builder.Configuration.GetValue<string>("MongoDbSettings:ConnectionString")));
+
+builder.Services.AddScoped<UserRepository>();
+
 builder.Services.AddControllers();
 
 // Configure CORS
