@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './Dashboard.css';
 
 const Dashboard = () => {
+  const [personalInfo, setPersonalInfo] = useState(null);
   const navigate = useNavigate();
+  const username = localStorage.getItem('username');  // Get the username from localStorage
+  
+  useEffect(() => {
+    // Fetch user information when the dashboard loads
+    const fetchUserInfo = async () => {
+      try {
+        if (username) {
+          // Fetching user data from the backend
+          const response = await axios.get(`http://localhost:5011/api/login/userinfo/${username}`);
+          setPersonalInfo(response.data);
+          console.log("User Information:", response.data);
+        }
+      } catch (error) {
+        console.error('Error fetching user information:', error);
+      }
+    };
+
+    fetchUserInfo();
+  }, [username]);
 
   // Logout handler function
   const handleLogout = () => {
-    // Add logic here if needed (e.g., clearing tokens or session storage)
+    // Clear localStorage and redirect to login
+    localStorage.removeItem('username');
     navigate('/');
   };
 
@@ -18,24 +40,40 @@ const Dashboard = () => {
       {/* Account Summary Section */}
       <div className="account-summary">
         <h2>Account Summary</h2>
-        <p>Account Balance: $10,000.00</p>
+        {personalInfo ? (
+          <p>Account Balance: ${personalInfo.accountBalance.toFixed(2)}</p>
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
 
       {/* Recent Transactions Section */}
       <div className="recent-transactions">
         <h2>Recent Transactions</h2>
-        <ul>
-          <li>Transaction 1: -$200.00 on 12/01/2024</li>
-          <li>Transaction 2: +$500.00 on 11/29/2024</li>
-          <li>Transaction 3: -$50.00 on 11/28/2024</li>
-        </ul>
+        {personalInfo && personalInfo.recentTransactions && personalInfo.recentTransactions.length > 0 ? (
+          <ul>
+            {personalInfo.recentTransactions.map((transaction, index) => (
+              <li key={index}>
+                {transaction.description}: ${transaction.amount.toFixed(2)} on {transaction.date}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
 
       {/* Personal Information Section */}
       <div className="personal-info">
         <h2>Personal Information</h2>
-        <p>Name: John Doe</p>
-        <p>Email: johndoe@example.com</p>
+        {personalInfo ? (
+          <>
+            <p>Name: {personalInfo.username}</p>
+            <p>Email: {personalInfo.email}</p>
+          </>
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
 
       {/* Quick Actions Section */}
@@ -43,7 +81,6 @@ const Dashboard = () => {
         <h2>Quick Actions</h2>
         <button className="btn-action">Deposit</button>
         <button className="btn-action">Withdraw</button>
-        <button className="btn-action">Transfer</button>
       </div>
 
       {/* Logout Button */}

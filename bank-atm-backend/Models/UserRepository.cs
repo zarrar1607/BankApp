@@ -28,6 +28,12 @@ namespace BankAtmBackend.Models
         {
             return await _usersCollection.Find(_ => true).ToListAsync();
         }
+
+        public async Task UpdateUserAsync(User user)
+        {
+            await _usersCollection.ReplaceOneAsync(u => u.Id == user.Id, user);
+        }
+
     }
 
     // Class representing the User data model
@@ -35,15 +41,35 @@ namespace BankAtmBackend.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }  // Map `_id` from MongoDB to `Id` in your C# code
+        public string Id { get; set; }
 
         [BsonElement("username")]
-        public string? Username { get; set; }  // Ensure this matches MongoDB field
+        public string Username { get; set; } = string.Empty;
 
         [BsonElement("password")]
-        public string? Password { get; set; }  // Ensure this matches MongoDB field
+        public string Password { get; set; } = string.Empty;
 
         [BsonElement("email")]
-        public string? Email { get; set; }  // Ensure this matches MongoDB field
+        public string Email { get; set; } = string.Empty;
+
+        // Add AccountBalance field
+        [BsonElement("accountBalance")]
+        public double AccountBalance { get; set; } = 0.0;
+
+        // Add RecentTransactions field
+        [BsonElement("recentTransactions")]
+        public List<Transaction> RecentTransactions { get; set; } = new List<Transaction>();
+    }
+
+    public class Transaction
+    {
+        [BsonElement("date")]
+        public string Date { get; set; } = string.Empty;
+
+        [BsonElement("amount")]
+        public double Amount { get; set; }
+
+        [BsonElement("description")]
+        public string Description { get; set; } = string.Empty;
     }
 }

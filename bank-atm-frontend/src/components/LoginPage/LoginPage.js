@@ -17,8 +17,10 @@ const LoginPage = () => {
         password: password,
       });
       
-      // On successful login, navigate to dashboard
+      // On successful login, store username in localStorage and navigate to dashboard
       if (response.status === 200) {
+        localStorage.setItem('username', username);  // Store the username in localStorage
+        console.log(username);
         navigate('/dashboard');
       }
     } catch (error) {
