@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './LoginPage.css';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();  // Hook to navigate to different routes
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log('Login page');
     try {
       const response = await axios.post('http://localhost:5011/api/login/authenticate', {
         username: username,
-        password: password
-      }, { withCredentials: true });
-      // Handle successful login (e.g., store token, redirect to dashboard)
-      console.log('Login successful:', response.data);
+        password: password,
+      });
+      
+      // On successful login, navigate to dashboard
+      if (response.status === 200) {
+        navigate('/dashboard');
+      }
     } catch (error) {
       setErrorMessage('Invalid username or password');
       console.error('Login error:', error);
