@@ -13,6 +13,7 @@ This project fulfills the following requirements:
 	• Bank / ATM application
 
 ## Architecture
+<code>
  +----------------------------------------+                     +-------------------+
  |                                        |  HTTP Request       |                   |
  |       Frontend (View) - React          |<------------------->|  Controller (.NET)|
@@ -31,6 +32,6 @@ This project fulfills the following requirements:
  |     - Communicates with DB      |                       |       (credentials, etc.)|
  |                                 |                       |                          |
  +---------------------------------+                       +--------------------------+
-
+ </code>
 ## Video
 https://www.loom.com/share/8c18860d0d584c9085093dd631bd02a7?sid=370b6cb2-786f-4618-9a6d-c48747612b2d
