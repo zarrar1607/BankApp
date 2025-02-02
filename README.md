@@ -1,16 +1,14 @@
 ## Requirements
 This project fulfills the following requirements:
-	1. Front end must be a react application
-	2. Back end must be a dotnet application
-		a. Must include GET, POST and PUT api calls
-	3. Must have data persistence to a database.  This can be a SQL lite database, MS SQL, MySQL, Mongo, etc.  You can use multiple databases if you'd like. 
-	4. The Entity Framework must handle all communication between the dotnet application and the database
-	5. Your application must have a login page with support of Oauth2.0 Authentication and handle multiple users.
-		a. It should have a workflow for creating a new account
-		b. Authenticating against that new account
-		c. Being able to login with that new account
+
+1. Front end must be a react application
+2. Back end must be a dotnet application: Must include GET, POST and PUT api calls
+4. Must have data persistence to a database.  This can be a SQL lite database, MS SQL, MySQL, Mongo, etc.  You can use multiple databases if you'd like.
+5. The Entity Framework must handle all communication between the dotnet application and the database
+6. Your application must have a login page with support of Oauth2.0 Authentication and handle multiple users, it should have a workflow for creating a new account, Authenticating against that new account,and being able to login with that new account
+   
 ## Project:
-	• Bank / ATM application
+Bank / ATM application
 
 ## Architecture
 <code>
